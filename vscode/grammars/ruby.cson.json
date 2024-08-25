@@ -486,7 +486,7 @@
       ]
     },
     {
-      "begin": "`",
+      "begin": "(?<!\\.)`",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.string.begin.ruby"
@@ -2355,6 +2355,19 @@
         {
           "name": "entity.name.function.ruby",
           "match": "([a-zA-Z][a-zA-Z0-9_!?]*)(?=[^a-zA-Z0-9_!?])"
+        }
+      ]
+    },
+    {
+      "name": "meta.method-call.ruby",
+      "begin": "(?<=\\.)`",
+      "end": "`",
+      "patterns": [
+        {
+          "include": "#interpolated_ruby"
+        },
+        {
+          "include": "#escaped_char"
         }
       ]
     },
